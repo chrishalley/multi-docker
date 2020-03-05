@@ -14,7 +14,7 @@ after_success:
   - docker build -t chrishalley86/multi-server ./server
   - docker build -t chrishalley86/multi-worker ./worker
 
-  - echo "$docker_password" | docker login -u "$docker_id" --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
   - docker push chrishalley86/multi-client
   - docker push chrishalley86/multi-nginx
