@@ -40,7 +40,6 @@ export const Fib = () => {
 
   const fetchIndexes = async () => {
     const seenIndexes = await axios.get('/api/values/all');
-    console.log({seenIndexes})
     dispatch({
       type: "fetchIndexes",
       payload: seenIndexes.data
@@ -54,7 +53,6 @@ export const Fib = () => {
   const renderValues = () => {
     const entries = [];
     for (let key in state.values) {
-      console.log({key})
       entries.push(
         <div key={key}>
           For index {key}, I calculated {state.values[key]}
